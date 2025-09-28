@@ -1,23 +1,6 @@
 @import "tailwindcss";
 
-@theme inline {
-  /* Logo Color */
-  --bg-gorange: #F15A25;
-  --bg-gorange-80: #F15A25cc; /* 80% */
-  --bg-gorange-60: #F15A2599; /* 60% */
-  --bg-gorange-40: #F15A2566; /* 40% */
-  --text-gorange: #F15A25;
-
-  /* Neutral */
-  --color-black-lite: #333;
-  --color-dim-gray: #656565;
-  --color-white: #ffffff;
-}
-
-
-/* 🔹 */
 body {
-  background: #333;
   font-family: var(--font-inter), ui-sans-serif, system-ui, -apple-system,
                "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
                "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
