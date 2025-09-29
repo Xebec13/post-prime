@@ -17,7 +17,7 @@ export default function Nav() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 w-full flex items-center justify-end p-6 text-orange-500 z-50">
+    <nav className=" fixed top-0 left-0 w-full flex items-center justify-end p-6 text-orange-500 z-50">
       {/* Desktop menu */}
       <ul className="hidden md:flex gap-6 text-sm font-bold uppercase w-full items-center">
         {navItems.map((item, i) =>

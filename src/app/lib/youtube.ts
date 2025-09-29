@@ -1,13 +1,36 @@
 // src/lib/youtube.ts
-const API_KEY = process.env.YT_API_KEY!;
-const CHANNEL_ID = "UCJz63WADBQBcPJ4A6N5BzfQ"; // PostPrime
+export type YTVideo = {
+  id: {
+    kind: string;
+    videoId?: string;
+  };
+  snippet: {
+    title: string;
+    publishedAt: string;
+    thumbnails: {
+      medium?: { url: string };
+      high?: { url: string };
+    };
+  };
+};
 
-export async function getYoutubeVideos(maxResults: number = 3) {
+const API_KEY = process.env.YT_API_KEY;
+const CHANNEL_ID = "UCJz63WADBQBcPJ4A6N5BzfQ"; // PostPrime channelId
+
+export async function getYoutubeVideos(maxResults: number = 1): Promise<YTVideo[]> {
   const url = `https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&channelId=${CHANNEL_ID}&part=snippet,id&order=date&maxResults=${maxResults}`;
 
   const res = await fetch(url, { next: { revalidate: 3600 } }); // cache 1h
-  if (!res.ok) throw new Error("Failed to fetch YouTube videos");
+
+  if (!res.ok) {
+    console.error("YouTube API error:", res.statusText);
+    return [];
+  }
 
   const data = await res.json();
-  return data.items; 
+
+  // zwracamy tylko filmy (bez playlist i innych)
+  return (data.items as YTVideo[]).filter(
+    (item) => item.id.kind === "youtube#video" && item.id.videoId
+  );
 }
