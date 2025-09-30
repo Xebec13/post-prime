@@ -1,38 +1,37 @@
-'use client'
-
+"use client";
 
 import { FaYoutube, FaInstagram, FaFacebook, FaSpotify } from "react-icons/fa";
 
 const platformItems = [
-    { icon: FaYoutube, href: "https://youtube.com/@PostPrimePL", color: "text-red-500" },
-    { icon: FaInstagram, href: "https://instagram.com/", color: "text-pink-400" },
-    { icon: FaFacebook, href: "https://facebook.com/", color: "text-blue-500" },
-    { icon: FaSpotify, href: "https://spotify.com/", color: "text-green-600" },
+  { icon: FaYoutube, href: "https://youtube.com/@PostPrimePL", color: "text-red-500" },
+  { icon: FaInstagram, href: "https://instagram.com/", color: "text-pink-400" },
+  { icon: FaFacebook, href: "https://facebook.com/", color: "text-blue-500" },
+  { icon: FaSpotify, href: "https://spotify.com/", color: "text-green-600" },
 ];
 
 export default function PlatformsSection() {
-    return (
-        <section className="relative w-full h-[40vh]">
-            
+  return (
+    <section className="bg-gradient-to-b from-black/60 to-black">
+      {/* Section content */}
+      <div className="p-16 text-white text-shadow-orange-500/80 text-shadow-sm">
+        {/* Heading */}
+        <h2 className="mb-6 text-2xl font-bold md:text-4xl">Subscribe on:</h2>
 
-                {/* Content on top */}
-                <div className="relative text-orange-500 p-16">
-                    <h2 className="text-2xl md:text-4xl font-bold mb-6">Subscribe on:</h2>
-                    <div className="flex gap-8 justify-center items-center">
-                        {platformItems.map(({ icon: Icon, href, color }) => (
-                            <a
-                                key={href}
-                                href={href}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className={`text-4xl md:text-6xl ${color} transition-all duration-300 ease-in-out hover:text-orange-500 hover:scale-110`}
-                            >
-                                <Icon />
-                            </a>
-                        ))}
-                    </div>
-                </div>
-            
-        </section>
-    );
+        {/* Platform icons */}
+        <div className="flex items-center justify-center gap-8">
+          {platformItems.map(({ icon: Icon, href, color }) => (
+            <a
+              key={href}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`text-4xl md:text-6xl ${color} transition-all duration-300 ease-in-out hover:scale-110 hover:-translate-y-1 hover:text-orange-500`}
+            >
+              <Icon />
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 }

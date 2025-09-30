@@ -39,22 +39,22 @@ export default function YtSection() {
           {
             children: (
               <div
-                className="absolute inset-0 h-full w-full bg-contain bg-center"
+                className="absolute inset-0 h-full w-full bg-contain md:bg-cover bg-center bg-no-repeat "
                 style={{
                   backgroundImage:
-                    "linear-gradient(rgba(0,0,0,0.8)0%,rgba(0,0,0,0.7)50%,rgba(0,0,0,0.6)100%),url('/postprime-logo.png')",
+                    "linear-gradient(rgba(0,0,0,1)0%,rgba(0,0,0,0.6)100%),url('/postprime-logo.png')",
                 }}
               />
             ),
-            speed: -50,
+            speed: -40,
           },
         ]}
-        className="absolute inset-0 h-full w-full"
+        className="absolute inset-0 h-full w-full bg-black/50"
       >
-        {/* Grid layout: 2 columns on desktop, 1 column on mobile */}
-        <div className="relative grid grid-cols-1 gap-6 p-8 md:grid-cols-3">
+        {/* 2 columns on desktop, 1 on mobile */}
+        <div className="relative grid grid-cols-1 md:grid-cols-3 gap-4 p-8">
           {/* Main video player */}
-          <div className="w-full h-full aspect-video col-span-2">
+          <div className="h-full w-full aspect-video col-span-2">
             {currentVideo && (
               <iframe
                 src={`https://www.youtube.com/embed/${currentVideo}`}
@@ -69,10 +69,10 @@ export default function YtSection() {
 
           {/* Playlist list with scroll */}
           <div className="relative">
-            <h3 className="p-2 sticky inset-0 font-bold text-orange-500">
+            <h3 className="sticky inset-0 p-2 font-bold text-orange-500">
               Playlist
             </h3>
-            <ul className="mt-2 space-y-2 max-h-120 overflow-y-scroll">
+            <ul className="mt-2 space-y-2 max-h-110 md:max-h-screen overflow-y-scroll">
               {videos.slice(1).map((video) => (
                 <li
                   key={video.videoId}
@@ -93,11 +93,6 @@ export default function YtSection() {
           </div>
         </div>
       </ParallaxBanner>
-
-      {/* Extra sections for scroll/parallax effect */}
-      <div className="h-screen"></div>
-      <div className="h-screen"></div>
-      <div className="h-screen"></div>
     </section>
   );
 }

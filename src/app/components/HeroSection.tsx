@@ -1,5 +1,5 @@
 export default function HeroSection() {
-  
+
   return (
     <section
       id="home"
@@ -7,7 +7,7 @@ export default function HeroSection() {
         backgroundImage:
           "linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.6)), url('/postprime-hero.png')",
       }}
-      className="h-screen bg-cover bg-center flex flex-col justify-end items-center text-center p-6"
+      className="min-h-screen bg-cover bg-center flex flex-col justify-end items-center text-center p-6"
     >
       <div className="text-white max-w-3xl">
         {/* Heading */}
