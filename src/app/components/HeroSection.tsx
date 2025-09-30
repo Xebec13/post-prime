@@ -1,9 +1,5 @@
-import { getYoutubeVideos } from "../lib/youtube";
-
-export default async function HeroSection() {
-  const videos = await getYoutubeVideos(1);
-  const latest = videos[0];
-
+export default function HeroSection() {
+  
   return (
     <section
       id="home"
@@ -19,17 +15,6 @@ export default async function HeroSection() {
           Listen to Your Favorite <br /> Basketball Podcast
         </h2>
 
-        {/* Last YouTube video */}
-        {latest && (
-          <div className="w-full md:w-2/3 mx-auto aspect-video rounded-xl overflow-hidden shadow-lg">
-            <iframe
-              src={`https://www.youtube.com/embed/${latest.id.videoId}`}
-              title={latest.snippet.title}
-              className="w-full h-full"
-              allowFullScreen
-            />
-          </div>
-        )}
       </div>
     </section>
   );
