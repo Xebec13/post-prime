@@ -1,9 +1,9 @@
 "use client";
 
-import { ParallaxBanner } from "react-scroll-parallax";
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { getYoutubeVideos, YoutubeVideo } from "../lib/youtubeApi";
+import ParalaxBg from "./ParalaxBg";
 
 const PLAYLIST_ID = "UUJz63WADBQBcPJ4A6N5BzfQ";
 
@@ -33,28 +33,14 @@ export default function YtSection() {
 
   return (
     <section className="relative min-h-screen">
-      {/* Background with parallax */}
-      <ParallaxBanner
-        layers={[
-          {
-            children: (
-              <div
-                className="absolute inset-0 h-full w-full bg-contain md:bg-cover bg-center bg-no-repeat "
-                style={{
-                  backgroundImage:
-                    "linear-gradient(rgba(0,0,0,1)0%,rgba(0,0,0,0.6)100%),url('/postprime-logo.png')",
-                }}
-              />
-            ),
-            speed: -40,
-          },
-        ]}
-        className="absolute inset-0 h-full w-full bg-black/50"
-      >
+      <ParalaxBg
+        imageUrl="/postprime-logo.png"
+        gradient="linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0.6))"
+      />
         {/* 2 columns on desktop, 1 on mobile */}
-        <div className="relative grid grid-cols-1 md:grid-cols-3 gap-4 p-8">
+        <div className="relative grid grid-cols-1 gap-4 p-8 md:grid-cols-3">
           {/* Main video player */}
-          <div className="h-full w-full aspect-video col-span-2">
+          <div className="col-span-2 aspect-video h-full w-full">
             {currentVideo && (
               <iframe
                 src={`https://www.youtube.com/embed/${currentVideo}`}
@@ -69,10 +55,10 @@ export default function YtSection() {
 
           {/* Playlist list with scroll */}
           <div className="relative">
-            <h3 className="sticky inset-0 p-2 font-bold text-orange-500">
+            <h3 className="sticky inset-0 font-bold text-orange-500 p-2 mb-3">
               Playlist
             </h3>
-            <ul className="mt-2 space-y-2 max-h-110 md:max-h-screen overflow-y-scroll">
+            <ul className="space-y-2 max-h-75 md:max-h-full overflow-y-scroll ">
               {videos.slice(1).map((video) => (
                 <li
                   key={video.videoId}
@@ -92,7 +78,7 @@ export default function YtSection() {
             </ul>
           </div>
         </div>
-      </ParallaxBanner>
+      
     </section>
   );
 }

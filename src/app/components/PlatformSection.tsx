@@ -18,7 +18,7 @@ export default function PlatformsSection() {
         <h2 className="mb-6 text-2xl font-bold md:text-4xl">Subscribe on:</h2>
 
         {/* Platform icons */}
-        <div className="flex items-center justify-center gap-8">
+        <div className="flex items-center justify-evenly gap-6">
           {platformItems.map(({ icon: Icon, href, color }) => (
             <a
               key={href}
