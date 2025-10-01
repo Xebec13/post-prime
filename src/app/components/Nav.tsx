@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import Image from "next/image";
 
@@ -15,9 +15,22 @@ const navItems = [
 
 export default function Nav() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10); // blur jeśli użytkownik zjechał 10px
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <nav className="fixed top-0 left-0 z-50 flex w-full items-center justify-end p-8 text-orange-500">
+    <nav
+      className={`fixed top-0 left-0 z-50 flex w-full items-center justify-end py-3 px-5 text-orange-500 transition-colors duration-300 ${
+        isScrolled ? "md:backdrop-blur-sm md:bg-black/50" : "md:bg-transparent"
+      }`}
+    >
       {/* Desktop navigation */}
       <ul className="hidden w-full items-center gap-6 text-sm font-bold uppercase md:flex">
         {navItems.map((item, i) =>
@@ -51,15 +64,17 @@ export default function Nav() {
       <button
         onClick={() => setIsOpen((prev) => !prev)}
         aria-label="Toggle menu"
-        className="z-50 cursor-pointer text-2xl md:hidden"
+        className="z-50 cursor-pointer text-2xl md:hidden backdrop-blur-2xl p-2 rounded-full"
       >
         {isOpen ? <FaTimes /> : <FaBars />}
       </button>
 
       {/* Fullscreen mobile overlay */}
       <ul
-        className={`fixed top-0 left-0 flex h-screen w-full flex-col items-center justify-center gap-8 bg-black/90 text-2xl font-semibold uppercase text-white transition-transform duration-500 ease-in-out md:hidden ${
-          isOpen ? "translate-x-0 opacity-100" : "-translate-x-full opacity-0"
+        className={`fixed top-0 left-0 flex h-screen w-full flex-col items-center justify-center gap-8 bg-black/90 text-2xl font-semibold uppercase text-white transition-all duration-500 ease-in-out md:hidden ${
+          isOpen
+            ? "translate-x-0 opacity-100 visible"
+            : "-translate-x-full opacity-0 invisible"
         }`}
       >
         {navItems.map((item, i) =>

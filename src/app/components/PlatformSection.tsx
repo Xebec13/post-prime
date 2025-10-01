@@ -11,7 +11,8 @@ const platformItems = [
 
 export default function PlatformsSection() {
   return (
-    <section className="bg-gradient-to-b from-black/60 to-black">
+    <section 
+    className="bg-black/80">
       {/* Section content */}
       <div className="p-16 text-white text-shadow-orange-500/80 text-shadow-sm">
         {/* Heading */}

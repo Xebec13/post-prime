@@ -32,15 +32,20 @@ export default function YtSection() {
   if (loading) return <p>Loading...</p>;
 
   return (
-    <section className="relative min-h-screen">
+    <section 
+    id="videos"
+    style={{
+        backgroundImage: `linear-gradient(to top, rgba(0,0,0,0)0%, rgba(0,0,0,0.8) 100%)`
+      }}
+    className="relative min-h-screen scroll-mt-20 lg:p-12 flex items-center justify-center">
       <ParalaxBg
         imageUrl="/postprime-logo.png"
-        gradient="linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0.6))"
+        gradient="linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.8))"
       />
-        {/* 2 columns on desktop, 1 on mobile */}
-        <div className="relative grid grid-cols-1 gap-4 p-8 md:grid-cols-3">
+        {/* 1 Column*/}
+        <div className="relative grid grid-cols-1 lg:grid-cols-3 gap-4 h-full">
           {/* Main video player */}
-          <div className="col-span-2 aspect-video h-full w-full">
+          <div className="col-span-2 aspect-video w-full max-w-5xl h-full">
             {currentVideo && (
               <iframe
                 src={`https://www.youtube.com/embed/${currentVideo}`}
@@ -48,17 +53,17 @@ export default function YtSection() {
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
                 title="YouTube player"
-                className="h-full w-full rounded-xl shadow-lg"
+                className="w-full h-full rounded-xl shadow-lg"
               />
             )}
           </div>
 
           {/* Playlist list with scroll */}
-          <div className="relative">
-            <h3 className="sticky inset-0 font-bold text-orange-500 p-2 mb-3">
+          <div className="mt-2">
+            <h3 className="font-bold text-lg md:text-xl text-orange-500 mb-3">
               Playlist
             </h3>
-            <ul className="space-y-2 max-h-75 md:max-h-full overflow-y-scroll ">
+            <ul className="overflow-y-scroll max-h-120 space-y-2">
               {videos.slice(1).map((video) => (
                 <li
                   key={video.videoId}
