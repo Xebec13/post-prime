@@ -4,8 +4,8 @@ import { FaYoutube, FaInstagram, FaFacebook, FaSpotify } from "react-icons/fa";
 
 const platformItems = [
   { icon: FaYoutube, href: "https://youtube.com/@PostPrimePL", color: "text-red-500" },
-  { icon: FaInstagram, href: "https://instagram.com/", color: "text-pink-400" },
   { icon: FaFacebook, href: "https://facebook.com/", color: "text-blue-500" },
+  { icon: FaInstagram, href: "https://instagram.com/", color: "text-pink-400" },
   { icon: FaSpotify, href: "https://spotify.com/", color: "text-green-600" },
 ];
 

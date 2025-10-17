@@ -19,7 +19,7 @@ export default function Nav() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10); // blur jeśli użytkownik zjechał 10px
+      setIsScrolled(window.scrollY > 10);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -27,7 +27,7 @@ export default function Nav() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 z-50 flex w-full items-center justify-end py-3 px-5 text-orange-500 transition-colors duration-300 ${
+      className={`fixed top-0 left-0 z-50 flex w-full items-center justify-end p-3 md:p-6 text-gray-100 transition-colors duration-300 ${
         isScrolled ? "md:backdrop-blur-sm md:bg-black/50" : "md:bg-transparent"
       }`}
     >
@@ -35,22 +35,22 @@ export default function Nav() {
       <ul className="hidden w-full items-center gap-6 text-sm font-bold uppercase md:flex">
         {navItems.map((item, i) =>
           item.type === "logo" ? (
-            <li key={i} className="mr-auto cursor-pointer">
+            <li key={i} className="mr-auto cursor-pointer bg-white/90 rounded-full">
               <Link href={item.href} aria-label={item.alt}>
                 <Image
-                  src="/postprime-logo.png"
+                  src="/postprime-logo-1.png"
                   alt="Post Prime logo"
-                  width={60}
-                  height={60}
+                  width={40}
+                  height={40}
                   priority
-                  className="rounded-full bg-white/90 object-contain"
+                  className="object-contain p-0.5"
                 />
               </Link>
             </li>
           ) : (
             <li
               key={i}
-              className="transition-transform duration-500 hover:scale-105 hover:text-white"
+              className="transition-transform duration-500 hover:scale-105 hover:text-orange-500"
             >
               <Link href={item.href} aria-label={item.alt}>
                 {item.label}
@@ -86,7 +86,7 @@ export default function Nav() {
                 onClick={() => setIsOpen(false)}
               >
                 <Image
-                  src="/postprime-logo.png"
+                  src="/postprime-logo-1.png"
                   alt="Post Prime logo"
                   width={60}
                   height={60}

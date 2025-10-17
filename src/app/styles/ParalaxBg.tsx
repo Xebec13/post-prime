@@ -2,20 +2,21 @@
 import { ParallaxBanner } from "react-scroll-parallax";
 
 interface ParalaxBgProps {
-  imageUrl: string; // ścieżka do obrazka tła
-  gradient?: string; // gradient CSS, np. "radial-gradient(...)"
+  imageUrl: string; // ścieżka do obrazu
+  gradient?: string; // gradient CSS
+  background?: string; // dodatkowe klasy Tailwinda np. bg-cover, bg-center
 }
 
-export default function ParalaxBg({ imageUrl, gradient }: ParalaxBgProps) {
+export default function ParalaxBg({ imageUrl, gradient, background }: ParalaxBgProps) {
   return (
-    // Background layer pinned to the section (no impact on layout flow)
+    // Tło pinned do sekcji
     <div className="pointer-events-none absolute inset-0 -z-10">
       <ParallaxBanner
         layers={[
           {
             children: (
               <div
-                className="absolute inset-0 h-full w-full bg-contain bg-center bg-no-repeat"
+                className={`absolute inset-0 h-full w-full ${background ?? "bg-cover bg-center bg-no-repeat"}`}
                 style={{
                   backgroundImage: gradient
                     ? `${gradient}, url('${imageUrl}')`
@@ -23,7 +24,7 @@ export default function ParalaxBg({ imageUrl, gradient }: ParalaxBgProps) {
                 }}
               />
             ),
-            speed: -40,
+            speed: -50,
           },
         ]}
         className="h-full w-full"

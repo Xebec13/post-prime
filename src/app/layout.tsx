@@ -1,7 +1,7 @@
 import { Providers } from './providers';
 
 import type { Metadata } from "next";
-import { Inter, Montserrat } from "next/font/google";
+import { Inter, Montserrat,Roboto } from "next/font/google";
 import "./globals.css";
 
 
@@ -13,6 +13,10 @@ const inter = Inter({
 const montserrat = Montserrat({
   subsets: ["latin"],
   variable: "--font-montserrat",
+});
+const roboto = Roboto({
+  subsets: ["latin"],
+  variable: "--font-roboto",
 });
 
 export const metadata: Metadata = {
@@ -31,7 +35,7 @@ export default function RootLayout({
   return (
     <html lang="pl">
       <body
-        className={`${inter.variable} ${montserrat.variable} antialiased`}
+        className={`${inter.variable} ${montserrat.variable} ${roboto.variable} antialiased`}
       >
         <Providers>{children}</Providers>
       </body>
