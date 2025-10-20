@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useScrollPosition } from "../hooks/useScrollPosition";
 import Logo from "../styles/Logo";
 
 const heroContent = {
@@ -13,32 +13,21 @@ const heroContent = {
 };
 
 export default function HeroSection() {
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      // 🔸 Gdy scroll > 800px → zmieniamy kolor tła
-      setIsScrolled(window.scrollY > 500);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
+  const isScrolled = useScrollPosition({ offset: 600 });
   return (
     <section
       id="home"
-      className={`h-[150vh] flex flex-col gap-6 p-3 sm:p-6 transition-colors duration-700 ${
-        isScrolled ? "bg-black" : "bg-orange-700"
+      className={`h-[150vh] flex flex-col gap-6 p-3 sm:p-6 transition-colors duration-700 overflow-hidden ${
+        isScrolled ? "bg-second" : "bg-first"
       }`}
     >
       {/* === MAIN TITLE === */}
       <div className="min-h-screen translate-y-1/6 relative">
         <div className="grid grid-cols-2 gap-1 text-[clamp(1.5rem,15vw,20rem)] font-black uppercase text-nowrap text-transparent -z-50">
-          <h1 className="text-left bg-gradient-to-bl from-gray-200 to-gray-300 bg-clip-text scale-y-260">
+          <h1 className="text-left bg-gradient-to-bl from-gray-200 to-gray-400 bg-clip-text scale-y-260">
             {heroContent.title[0]}
           </h1>
-          <h1 className="text-right bg-gradient-to-br from-gray-200 to-gray-300 bg-clip-text scale-y-260">
+          <h1 className="text-right bg-gradient-to-br from-gray-200 to-gray-400 bg-clip-text scale-y-260">
             {heroContent.title[1]}
           </h1>
 

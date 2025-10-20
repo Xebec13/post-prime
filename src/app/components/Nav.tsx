@@ -1,9 +1,9 @@
 "use client";
-
+import { useScrollPosition } from "../hooks/useScrollPosition";
+import { useState} from "react";
 import Link from "next/link";
-import { useState, useEffect } from "react";
-import { FaBars, FaTimes } from "react-icons/fa";
 import Image from "next/image";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 const navItems = [
   { type: "logo", href: "#home", alt: "Go to Home" },
@@ -15,20 +15,11 @@ const navItems = [
 
 export default function Nav() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 500);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
+const isScrolled = useScrollPosition({ offset: 500 });
   return (
     <nav
-      className={`fixed top-0 left-0 z-50 flex w-full items-center justify-end p-3 md:p-6 text-gray-100 transition-colors duration-300 ${
-        isScrolled ? "transition-all duration-300 md:backdrop-blur-md md:bg-transparent" : "md:bg-transparent"
+      className={`fixed top-0 left-0 z-50 flex w-full items-center justify-end p-3 md:p-6 text-gray-100 transition-all duration-700 ${
+        isScrolled ? " md:backdrop-blur-md md:bg-transparent" : "md:bg-transparent"
       }`}
     >
       {/* Desktop navigation */}

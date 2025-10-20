@@ -11,6 +11,14 @@ body {
                "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
+.bg-first {
+  @apply bg-red-950;
+}
+
+.bg-second {
+  @apply bg-neutral-900;
+}
+
 .logo-text {
   font-family:var(--font-inter);
 }
