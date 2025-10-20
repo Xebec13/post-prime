@@ -19,7 +19,7 @@ export default function Nav() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
+      setIsScrolled(window.scrollY > 500);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -28,7 +28,7 @@ export default function Nav() {
   return (
     <nav
       className={`fixed top-0 left-0 z-50 flex w-full items-center justify-end p-3 md:p-6 text-gray-100 transition-colors duration-300 ${
-        isScrolled ? "md:backdrop-blur-sm md:bg-black/50" : "md:bg-transparent"
+        isScrolled ? "transition-all duration-300 md:backdrop-blur-md md:bg-transparent" : "md:bg-transparent"
       }`}
     >
       {/* Desktop navigation */}

@@ -5,10 +5,10 @@ export default function Home() {
       <Nav />
       <main>
       <HeroSection />
+      <YtSection />
 
       </main>
       {/* <PlatformSection/>
-      <YtSection />
       <FbSection/> */}
     </>
 
