@@ -15,10 +15,10 @@ const navItems = [
 
 export default function Nav() {
   const [isOpen, setIsOpen] = useState(false);
-const isScrolled = useScrollPosition({ offset: 500 });
+  const isScrolled = useScrollPosition({ offset: 500 });
   return (
     <nav
-      className={`fixed top-0 left-0 z-50 flex w-full items-center justify-end p-3 md:p-6 text-gray-100 transition-all duration-700 ${
+      className={`fixed top-0 left-0 z-50 flex w-full items-center justify-end p-3 sm:px-8 text-gray-100 transition-all duration-700 ${
         isScrolled ? " md:backdrop-blur-md md:bg-transparent" : "md:bg-transparent"
       }`}
     >

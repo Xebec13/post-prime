@@ -4,7 +4,7 @@ import Logo from "../styles/Logo";
 
 const heroContent = {
   title: ["Post", "Prime"],
-  subtitle: "Basketball Podcast",
+  subtitle: "Podcast",
   description: [
     "Pasja, autentyczność, energia",
     "Rozmowy tworzone z serca do koszykówki",
@@ -13,11 +13,11 @@ const heroContent = {
 };
 
 export default function HeroSection() {
-  const isScrolled = useScrollPosition({ offset: 600 });
+  const { isScrolled, duration } = useScrollPosition({ offset: 600, duration: 700 });
   return (
     <section
       id="home"
-      className={`h-[150vh] flex flex-col gap-6 p-3 sm:p-6 transition-colors duration-700 overflow-hidden ${
+      className={`h-screen sm:h-[150vh] flex flex-col gap-6 p-3 sm:p-6 transition-colors duration-${duration} overflow-hidden ${
         isScrolled ? "bg-second" : "bg-first"
       }`}
     >
