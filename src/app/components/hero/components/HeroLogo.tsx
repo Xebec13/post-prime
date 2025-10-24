@@ -22,7 +22,7 @@ export default function HeroLogo({ isScrolled }: { isScrolled: boolean }) {
             endScroll={800} 
             shouldAlwaysCompleteAnimation={false}
           >
-            <div className="relative right-0 -bottom-8 w-85 sm:w-110 will-change-transform transform-gpu">
+            <div className="relative right-0 -bottom-11 w-85 sm:w-110 will-change-transform transform-gpu">
               <Image
                 src="/basketball.svg"
                 alt="Basketball"
@@ -48,9 +48,9 @@ export default function HeroLogo({ isScrolled }: { isScrolled: boolean }) {
           endScroll={100} 
           shouldAlwaysCompleteAnimation={false}
         >
-          <div className="relative right-22 sm:right-0 bottom-13 sm:bottom-18 w-40 sm:w-45 will-change-transform transform-gpu">
+          <div className="relative right-22 sm:right-0 bottom-13 sm:bottom-18 w-43 sm:w-48 will-change-transform transform-gpu">
             <Image
-              src="/pp-hand.png"
+              src="/hand15.png"
               alt="Hand illustration"
               width={300}
               height={300}

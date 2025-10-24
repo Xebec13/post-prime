@@ -1,8 +1,8 @@
-import { Nav, Hero, About, PlatformSection, YtSection, FbSection, } from "./components";
+import { Navbar, Hero, About, PlatformSection, YtSection, FbSection, } from "./components";
 export default function Home() {
   return (
     <>
-      <Nav />
+      <Navbar />
       <main>
       <Hero/>
       <About/>

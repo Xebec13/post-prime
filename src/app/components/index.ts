@@ -1,4 +1,4 @@
-export { default as Nav } from "./nav/Nav";
+export { default as Navbar } from "./navbar/Navbar";
 export { default as YtSection } from "./YtSection";
 export { default as Hero} from "./hero/Hero";
 export { default as PlatformSection} from "./PlatformSection"
