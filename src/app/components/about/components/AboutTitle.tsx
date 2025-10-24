@@ -22,16 +22,19 @@ export default function AboutTitle({ text }: { text: string }) {
   }, []);
 
   return (
-    <Parallax
-      opacity={[0, 1, "easeOutQuad"]}
-      translateY={[25, 0, "easeOutCubic"]}
-      startScroll={startScroll}
-      endScroll={800}
-      shouldAlwaysCompleteAnimation
-    >
-      <h2 className="font-medium text-center text-xl sm:text-5xl bg-gradient-to-b from-gray-200 to-gray-400 bg-clip-text text-transparent">
-        {text}
-      </h2>
-    </Parallax>
+    <>
+      <Parallax
+        opacity={[0, 1, "easeOutQuad"]}
+        translateY={[25, 0, "easeOutCubic"]}
+        // translateX={[0, 50, "easeOutCubic"]}
+        startScroll={startScroll}
+        endScroll={800}
+        shouldAlwaysCompleteAnimation
+      >
+        <h2 className="text-5xl text-neutral-700 uppercase">
+          {text}
+        </h2>
+      </Parallax>
+    </>
   );
 }
