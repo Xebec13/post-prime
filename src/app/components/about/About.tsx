@@ -15,20 +15,19 @@ export default function About() {
   return (
     // === ABOUT SECTION WRAPPER ===
     <section
-      className={`relative h-[300vh] border-2 p-8 transition-colors duration-${duration} ${isScrolled ? "bg-second" : "bg-first"
+      className={`border-2 transition-colors duration-${duration} ${isScrolled ? "bg-second" : "bg-first"
         }`}
     >
-
       {/* --- Subtitle (Animated with Parallax) --- */}
-      <div className="mb-5 text-right">
+      <div className="mb-5 text-center">
         <AboutTitle text={aboutContent.subtitle} />
       </div>
 
-        {/* === TEXT CONTENT AREA === */}
-      <div className="min-h-screen relative z-10 border-2 border-indigo-500">
-        <div className="p-4">
+      <div className="h-[200vh] relative">
+        <div className="p-4 ">
+
           {/* --- Hosts list (individual names) --- */}
-          <div className="text-[3rem] text-gray-500">
+          <div className="text-[3rem] text-white border-2 border-green-500 uppercase">
             {aboutContent.hosts.map((name, index) => (
               <p className="" key={index}>
                 {name}
@@ -37,19 +36,18 @@ export default function About() {
           </div>
 
           {/* --- Description and Button section --- */}
-          <div className="">
+          <div className="border-2">
             <AboutContent
               description={aboutContent.description}
               buttonText={aboutContent.button}
             />
           </div>
         </div>
-
-      </div>
         {/* === BACKGROUND SECTION (STICKY PARALLAX) === */}
         <div className="sticky inset-0 w-full h-screen border-2 border-pink-500">
           <AboutBg />
         </div>
+      </div>
     </section>
   );
 }

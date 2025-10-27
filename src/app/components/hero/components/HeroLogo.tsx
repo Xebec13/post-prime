@@ -4,8 +4,8 @@ import { Parallax } from "react-scroll-parallax";
 
 export default function HeroLogo({ isScrolled }: { isScrolled: boolean }) {
   return (
-    <div className="absolute inset-0 pointer-events-none flex sm:justify-center items-start justify-end isolate">
-      <div className="relative -bottom-1/6 -right-12 sm:-bottom-6 sm:right-0 flex flex-col justify-end items-end sm:justify-center sm:items-center">
+    <div className="-z-50 absolute inset-0 pointer-events-none flex sm:justify-center items-start justify-end isolate">
+      <div className="relative -bottom-1/5 -right-12 sm:-bottom-10 sm:right-0 flex flex-col justify-end items-end sm:justify-center sm:items-center">
         
         {/* === 🏀 Basketball animation === */}
         {/* Phase 1 – ball stays slightly in place */}
@@ -22,7 +22,7 @@ export default function HeroLogo({ isScrolled }: { isScrolled: boolean }) {
             endScroll={800} 
             shouldAlwaysCompleteAnimation={false}
           >
-            <div className="relative right-0 -bottom-11 w-85 sm:w-110 will-change-transform transform-gpu">
+            <div className="relative right-0 -bottom-13 w-85 sm:w-110 will-change-transform transform-gpu">
               <Image
                 src="/basketball.svg"
                 alt="Basketball"

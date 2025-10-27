@@ -5,12 +5,24 @@ html {
 }
 body {
   @apply antialiased;
-  @apply bg-neutral-400 text-gray-300;
+  @apply bg-neutral-900;
   font-family: var(--font-inter), ui-sans-serif, system-ui, -apple-system,
-               "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
-               "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
-.bg-first { @apply bg-neutral-700; }
-.bg-second { @apply bg-neutral-400; }
+.bg-first {
+  @apply bg-neutral-900;
+}
+.bg-second {
+  @apply bg-orange-200;
+}
+
+.hero-shadow-title {
+  text-shadow: 0px 0px 0 rgb(232, 193, 148), 1px 1px 0 rgb(210, 171, 126),
+    2px 2px 0 rgb(189, 150, 105), 3px 3px 0 rgb(167, 128, 83),
+    4px 4px 0 rgb(145, 106, 61), 5px 5px 0 rgb(123, 84, 39),
+    6px 6px 0 rgb(101, 62, 17), 7px 7px 6px rgba(0, 0, 0, 0.45),
+    7px 7px 1px rgba(0, 0, 0, 0.5), 0px 0px 6px rgba(0, 0, 0, 0.2);
+}
 

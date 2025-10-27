@@ -37,18 +37,18 @@ export default function Navbar() {
       </div>
 
       {/* === RIGHT SIDE – TOGGLE BUTTON === */}
-      <div className="relative z-50 p-2 flex items-center  backdrop-invert rounded-md">
+      <div className="relative z-50 flex items-center rounded-md backdrop-invert">
         <button
           onClick={() => setIsOpen((prev) => !prev)}
           aria-label="Toggle menu"
-          className="text-2xl text-neutral-900 cursor-pointer"
+          className="text-2xl text-orange-500 p-2 rounded-md cursor-pointer"
         >
           {isOpen ? <FaTimes /> : <FaBars />}
         </button>
       </div>
       {/* === FULLSCREEN OVERLAY MENU === */}
       <ul
-        className={`fixed top-0 right-0 pt-20 px-6x h-screen w-3/4 flex flex-col justify-between bg-orange-300 transition-all duration-500 ease-in-out
+        className={`fixed top-0 right-0 pt-20 px-6 h-screen w-2/3 sm:w-1/3 flex flex-col justify-between bg-orange-300 transition-all duration-500 ease-in-out
           ${isOpen ? "translate-x-0 opacity-100 visible" : "translate-x-full opacity-0 invisible"}`}
       >
         <div className="text-neutral-800 text-4xl font-semibold uppercase space-y-5">
@@ -59,7 +59,7 @@ export default function Navbar() {
                 href={item.href}
                 aria-label={item.alt}
                 onClick={() => setIsOpen(false)}
-                className="transition-colors duration-300 hover:text-orange-400"
+                className="transition-colors duration-300 hover:text-gray-400"
               >
                 {item.label}
               </Link>
@@ -72,7 +72,7 @@ export default function Navbar() {
           {socialLinks.map((social, i) => (
             <p
               key={i}
-              className="cursor-pointer hover:bg-neutral-900 transition-colors duration-300"
+              className="cursor-pointer p-2 transition-colors duration-300 hover:text-gray-400"
             >
               <Link href={social.href} target="_blank" rel="noopener noreferrer">
                 {social.label}

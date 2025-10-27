@@ -11,7 +11,7 @@ export default function AboutBg() {
             speed: 15,
             children: (
               <div
-                className="relative w-full h-full bg-center bg-contain bg-no-repeat"
+                className="relative w-full h-full bg-center bg-cover sm:bg-contain bg-no-repeat"
                 style={{ backgroundImage: "url('/postprime-logo-1.png')" }}
               />
             ),
