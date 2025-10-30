@@ -1,4 +1,4 @@
-export default function Test() {
+export default function HeroLight() {
     return (
         <div className="absolute inset-0 flex justify-between items-start w-full overflow-hidden">
             {/* === LEFT LIGHT (from top-left toward center) === */}

@@ -31,10 +31,13 @@ export default function AboutTitle({ text }: { text: string }) {
         endScroll={800}
         shouldAlwaysCompleteAnimation
       >
-        <h2 className="text-5xl text-neutral-700 uppercase font-bold">
+
+        <h2 className="text-5xl md:text-7xl text-neutral-700 uppercase font-bold">
           {text}
         </h2>
       </Parallax>
+
+
     </>
   );
 }

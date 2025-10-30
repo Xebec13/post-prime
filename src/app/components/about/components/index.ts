@@ -1,3 +1,4 @@
 export { default as AboutTitle } from "./AboutTitle";
 export { default as AboutContent } from "./AboutContent";
 export { default as AboutBg } from "./AboutBg";
+export { default as AboutHosts } from "./AboutHosts";

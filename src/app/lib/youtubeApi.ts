@@ -24,7 +24,7 @@ export async function getYoutubeVideos(playlistId: string): Promise<YoutubeVideo
   const apiKey = process.env.NEXT_PUBLIC_YT_API_KEY;
 
   const res = await fetch(
-    `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=10&playlistId=${playlistId}&key=${apiKey}`
+    `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=30&playlistId=${playlistId}&key=${apiKey}`
   );
 
   if (!res.ok) {

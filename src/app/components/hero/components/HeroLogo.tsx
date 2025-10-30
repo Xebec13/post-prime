@@ -22,7 +22,7 @@ export default function HeroLogo({ isScrolled }: { isScrolled: boolean }) {
             endScroll={800} 
             shouldAlwaysCompleteAnimation={false}
           >
-            <div className="relative right-0 -bottom-13 w-85 sm:w-110 will-change-transform transform-gpu">
+            <div className="relative right-0 -bottom-12 w-85 sm:w-110 will-change-transform transform-gpu">
               <Image
                 src="/basketball.svg"
                 alt="Basketball"

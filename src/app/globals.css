@@ -6,7 +6,7 @@ html {
 body {
   @apply antialiased;
   @apply bg-neutral-900;
-  font-family: var(--font-inter), ui-sans-serif, system-ui, -apple-system,
+  font-family: var(--font-roboto), ui-sans-serif, system-ui, -apple-system,
     "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
@@ -19,6 +19,7 @@ body {
 }
 
 .hero-shadow-title {
+  font-family: var(--font-inter);
   text-shadow: 0px 0px 0 rgb(232, 193, 148), 1px 1px 0 rgb(210, 171, 126),
     2px 2px 0 rgb(189, 150, 105), 3px 3px 0 rgb(167, 128, 83),
     4px 4px 0 rgb(145, 106, 61), 5px 5px 0 rgb(123, 84, 39),
