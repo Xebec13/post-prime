@@ -1,4 +1,4 @@
-import { FooterForm, FooterLogo,FooterIcons,FooterInfo } from "./components";
+import { FooterForm, FooterLogo, FooterIcons, FooterInfo } from "./components";
 
 
 export default function Footer() {
@@ -9,7 +9,7 @@ export default function Footer() {
             {/* Top section with grid layout for social icons, logo, and subscribe form */}
             <div className="h-full grid grid-cols-1 sm:grid-cols-3 place-items-center gap-3">
                 {/* Social media icons */}
-                <FooterIcons/>
+                <FooterIcons />
 
                 {/* Footer logo component */}
                 <FooterLogo />
@@ -18,14 +18,14 @@ export default function Footer() {
                 <div className="flex flex-col gap-2 w-full max-w-60">
                     <p className="text-orange-200 uppercase text-md font-bold">Zapisz się do Newslettera!</p>
                     <FooterForm />
-                    <button className=" self-center text-sm text-gray-800 bg-orange-500 max-w-20 py-1 px-3 font-bold rounded-md uppercase cursor-pointer transition-all hover:scale-105 ">
+                    <button className="self-center text-sm text-gray-200 bg-orange-500 px-6 py-2 font-bold rounded-md uppercase cursor-pointer transition-all hover:scale-105 ">
                         Zapisz
                     </button>
                 </div>
             </div>
 
             {/* Bottom section with links and contact info */}
-            <FooterInfo/>
+            <FooterInfo />
         </div>
     )
 };

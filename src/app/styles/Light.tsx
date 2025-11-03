@@ -1,38 +1,43 @@
 interface LightProps {
-  variant?: "top" | "bottom" | "warmTop" | "warmBottom";
+  variant?: "top" | "bottom" | "divider" | "warmBottom";
 }
 
 export default function Light({ variant = "top" }: LightProps) {
-  // Define gradient classes as full static Tailwind strings
+  // === Define all visual variants ===
   const variants = {
     top: {
       position: "items-start",
       gradient: "bg-gradient-to-b from-orange-200/10 via-orange-100/10 to-transparent",
+      size: "w-[60%] h-[35%]",
     },
     bottom: {
       position: "items-end",
       gradient: "bg-gradient-to-t from-orange-200/10 via-orange-100/10 to-transparent",
+      size: "w-[60%] h-[35%]",
     },
-    warmTop: {
-      position: "items-start",
-      gradient: "bg-gradient-to-b from-orange-300/25 via-orange-200/15 to-transparent",
+    divider: {
+      position: "items-center",
+      gradient: "bg-orange-200/10",
+      size: "w-full h-full",
     },
     warmBottom: {
       position: "items-end",
       gradient: "bg-gradient-to-t from-orange-300/25 via-orange-200/15 to-transparent",
+      size: "w-[80%] h-[50%]",
     },
   } as const;
 
-  const style = variants[variant] ?? variants.top; // default to top if variant is invalid;
+  // Pick the style for the selected variant
+  const style = variants[variant] ?? variants.top;
 
   return (
     <div
       className={`absolute inset-0 flex justify-between ${style.position} w-full overflow-hidden pointer-events-none`}
     >
       {/* === LEFT LIGHT === */}
-      <div className={`w-[60%] h-[40%] ${style.gradient}`} />
+      <div className={`${style.size} ${style.gradient}`} />
       {/* === RIGHT LIGHT === */}
-      <div className={`w-[60%] h-[40%] ${style.gradient}`} />
+      <div className={`${style.size} ${style.gradient}`} />
     </div>
   );
 }

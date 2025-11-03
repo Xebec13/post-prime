@@ -39,24 +39,24 @@ export default function YoutubeList({
   if (loading) return <p>Loading...</p>;
 
   return (
-    <div className="flex flex-col gap-2 h-full w-full max-h-125">
+    <div className="flex flex-col gap-1 h-full w-full max-h-125">
       {videos.slice(0, visibleCount).map((video) => (
         <div
           key={video.videoId}
           onClick={() => onSelect(video.videoId)}
-          className="flex lg:grid lg:grid-cols-2 lg:place-items-stretch gap-1 rounded-md cursor-pointer transition-all duration-300 hover:scale-101 hover:bg-orange-500/40"
+          className=" grid grid-cols-2 lg:place-items-stretch gap-0.5 rounded-md cursor-pointer transition-all duration-300 hover:scale-101 hover:bg-orange-500/40"
         >
-          <div className="aspect-[2/1] shrink-0 rounded-lg p-1 flex items-center">
+          <div className="aspect-[2/1] sm:shrink-0 rounded-lg p-2 flex items-center">
             <Image
               src={video.thumbnail}
               alt={video.title}
               width={160}
               height={90}
-              className="w-full object-cover rounded-lg shadow-xs shadow-orange-200/40"
+              className="w-full  object-cover rounded-lg shadow-xs shadow-orange-200/40"
             />
           </div>
-          <div className="text-left p-0.5">
-            <p className="text-xs lg:text-sm text-gray-200 font-bold">
+          <div className="text-left p-1">
+            <p className="text-sm sm:text-md text-gray-200 font-bold">
               {video.title}
             </p>
           </div>
