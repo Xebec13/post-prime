@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   title: "Post Prime",
   description: "Basketball Podcast",
   icons: {
-    icon: "/favicon.ico",  
+    icon: "/pp-logo.png",  
   },
 };
 

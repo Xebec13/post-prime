@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { Parallax } from "react-scroll-parallax";
 
-export default function HeroLogo({ isScrolled }: { isScrolled: boolean }) {
+export default function HeroLogo() {
   return (
     <div className="-z-50 absolute inset-0 pointer-events-none flex sm:justify-center items-start justify-end isolate">
       <div className="relative -bottom-1/5 -right-12 sm:-bottom-10 sm:right-0 flex flex-col justify-end items-end sm:justify-center sm:items-center">
@@ -33,8 +33,7 @@ export default function HeroLogo({ isScrolled }: { isScrolled: boolean }) {
               
               {/* === 🩵 Watermark mask (changes color with scroll) === */}
               <div
-                className={`absolute bottom-1 right-0 h-[15%] w-[30%] transition-colors duration-700 ${
-                  isScrolled ? "bg-second" : "bg-first"
+                className={`absolute bottom-1 right-0 h-[15%] w-[30%] bg-neutral-900
                 }`}
               />
             </div>

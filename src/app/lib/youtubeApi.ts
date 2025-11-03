@@ -1,5 +1,3 @@
-// lib/youtubeApi.ts
-
 export interface YoutubeVideo {
   videoId: string;
   title: string;

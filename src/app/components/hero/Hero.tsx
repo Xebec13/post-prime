@@ -1,6 +1,6 @@
 "use client";
-import { useScrollPosition } from "../../hooks/useScrollPosition";
-import { HeroTitle, HeroContent, HeroLogo, HeroLight} from "./components";
+import { HeroTitle, HeroContent, HeroLogo} from "./components";
+import Light from "../../styles/Light"
 
 const heroContent = {
   title: ["Post", "Prime"],
@@ -12,22 +12,21 @@ const heroContent = {
 };
 
 export default function Hero() {
-  const { isScrolled, duration } = useScrollPosition({ offset: 600, duration: 700 });
+
   return (
     <>
       <section
         id="home"
-        className={`relative h-[150dvh] sm:h-[175dvh] overflow-hidden flex flex-col gap-6 transition-colors duration-${duration} ${isScrolled ? "bg-second" : "bg-first"
-          }`}
+        className={`relative h-[150dvh] sm:h-[175dvh] overflow-hidden flex flex-col gap-6 bg-neutral-900}`}
       >
-        <HeroLight/>
+        <Light variant="top" />
         <div className="min-h-screen w-full translate-y-1/8 sm:translate-y-1/7 relative p-3 sm:p-6">
           <div className="hero-shadow-title grid grid-cols-2 gap-2 text-[clamp(1.5rem,14vw,18rem)] font-black uppercase">
             {/* === TITLE === */}
             <HeroTitle title={heroContent.title} />
 
             {/* === LOGO === */}
-            <HeroLogo isScrolled={isScrolled} />
+            <HeroLogo />
           </div>
 
           {/* === DESCRIPTION & YEAR === */}

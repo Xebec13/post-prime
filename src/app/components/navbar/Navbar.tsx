@@ -26,12 +26,12 @@ export default function Navbar() {
       <div className="backdrop-invert rounded-full">
         <Link href={navItems[0].href} aria-label={navItems[0].alt}>
           <Image
-            src="/postprime-logo-1.png"
+            src="/postprime-logo-2.png"
             alt="Post Prime logo"
             width={40}
             height={40}
             priority
-            className="object-contain pt-0.5"
+            className="object-contain p-1"
           />
         </Link>
       </div>
