@@ -24,7 +24,6 @@ export default function About() {
             alt="Post Prime About"
             width={100}
             height={100}
-            priority
             className="w-full h-full object-cover object-center"
           />
         </div>
