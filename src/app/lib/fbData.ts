@@ -53,7 +53,7 @@ export interface FbInfoType {
 
 export const fbInfo: FbInfoType = {
   name: "Post Prime",
-  logo: "/postprime-logo-1.png",
+  logo: "/postprime-logo-2.png",
   imgWall: "/pp-wall.jpg",
   followers: "12k",
   following: "250",

@@ -56,7 +56,7 @@ export default function YoutubeList({
             />
           </div>
           <div className="text-left p-1">
-            <p className="text-sm sm:text-md text-gray-200 font-bold">
+            <p className="text-xs sm:text-sm text-gray-200 font-bold">
               {video.title}
             </p>
           </div>

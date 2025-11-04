@@ -7,7 +7,7 @@ export default function About() {
       {/* === Main Container with Image and Text === */}
       <div className="flex items-center justify-center lg:items-start lg:justify-end h-[75dvh] lg:h-[110dvh]">
         {/* === Text Content Overlay === */}
-        <div className="absolute bottom-0 lg:bottom-1/4 lg:left-0 z-10 max-w-lg lg:max-w-xl p-4 lg:p-8">
+        <div className="absolute bottom-0 lg:bottom-1/4 lg:left-0 z-10 max-w-lg lg:max-w-xl p-6 lg:p-16">
           <p className="mb-5 text-sm lg:text-2xl font-bold text-orange-100">
             Post Prime to rozmowy o koszykówce prowadzone przez ludzi z różnych środowisk i doświadczeń.
             Łączy nas pasja do gry, emocje i chęć dzielenia się tym, co w baskecie najciekawsze
@@ -23,7 +23,6 @@ export default function About() {
             src="/pp-about.png"
             alt="Post Prime About"
             priority
-            quality={100}
             width={1920}
             height={1080}
             className="w-full h-full object-cover object-center"

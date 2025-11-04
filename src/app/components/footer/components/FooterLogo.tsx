@@ -10,9 +10,9 @@ export default function FooterLogo() {
       <Image
         src="/postprime-logo-2.png"
         alt="PostPrime logo"
-        width={140}
+        width={60}
         height={60}
-        className="object-contain object-center w-full h-full"
+        className="object-contain object-center size-full"
         priority
       />
     </div>
