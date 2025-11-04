@@ -8,7 +8,7 @@ export default function Light({ variant = "top" }: LightProps) {
     top: {
       position: "items-start",
       gradient: "bg-gradient-to-b from-orange-200/10 via-orange-100/10 to-transparent",
-      size: "w-[60%] h-[35%]",
+      size: "w-[50%] h-[35%]",
     },
     bottom: {
       position: "items-end",

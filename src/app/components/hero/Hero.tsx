@@ -17,7 +17,7 @@ export default function Hero() {
     <>
       <section
         id="home"
-        className={`relative h-[150dvh] sm:h-[175dvh] overflow-hidden flex flex-col gap-6 bg-neutral-900}`}
+        className={`relative h-[175dvh] overflow-hidden flex flex-col gap-6 bg-neutral-900}`}
       >
         <Light variant="top" />
         <div className="min-h-screen w-full translate-y-1/8 sm:translate-y-1/7 relative p-3 sm:p-6">
