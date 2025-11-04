@@ -9,7 +9,7 @@ export default function About() {
         {/* === Text Content Overlay === */}
         <div className="absolute bottom-0 lg:bottom-1/4 lg:left-0 z-10 max-w-lg lg:max-w-xl p-4 lg:p-8">
           <p className="mb-5 text-sm lg:text-2xl font-bold text-orange-100">
-            Post Prime to rozmowy o koszykówce prowadzone przez ludzi z różnych środowisk i doświadczeń. 
+            Post Prime to rozmowy o koszykówce prowadzone przez ludzi z różnych środowisk i doświadczeń.
             Łączy nas pasja do gry, emocje i chęć dzielenia się tym, co w baskecie najciekawsze
           </p>
           <button className="px-6 py-2 text-sm font-bold uppercase text-gray-200 bg-orange-500/90 rounded-md cursor-pointer transition-all hover:scale-105">
@@ -22,6 +22,8 @@ export default function About() {
           <Image
             src="/pp-about.png"
             alt="Post Prime About"
+            priority
+            quality={100}
             width={100}
             height={100}
             className="w-full h-full object-cover object-center"
