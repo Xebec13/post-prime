@@ -1,4 +1,4 @@
-import Light from "../../styles/Light"
+// import Light from "../../styles/Light"
 export default function Social() {
     return (
         <div className="relative h-screen bg-neutral-900">
