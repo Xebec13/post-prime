@@ -52,7 +52,7 @@ export default function YoutubeList({
               alt={video.title}
               width={160}
               height={90}
-              className="w-full  object-cover rounded-lg shadow-xs shadow-orange-200/40"
+              className="w-full object-cover rounded-lg shadow-xs shadow-orange-200/40"
             />
           </div>
           <div className="text-left p-1">
