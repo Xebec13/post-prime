@@ -17,11 +17,11 @@ export default function Hero() {
     <>
       <section
         id="home"
-        className={`relative h-[175dvh] overflow-hidden flex flex-col gap-6 bg-neutral-900}`}
+        className={`border-2 border-pink-500 relative min-h-screen sm:h-[175vh] overflow-hidden flex flex-col gap-6 bg-neutral-900}`}
       >
         <Light variant="top" />
         <div className="min-h-screen w-full translate-y-1/8 sm:translate-y-1/7 relative p-3 sm:p-6">
-          <div className="hero-shadow-title grid grid-cols-2 gap-2 text-[clamp(1.5rem,14vw,18rem)] font-black uppercase">
+          <div className="hero-shadow-title grid grid-cols-2 gap-2 text-[clamp(1.3rem,13vw,25rem)] font-black uppercase">
             {/* === TITLE === */}
             <HeroTitle title={heroContent.title} />
 

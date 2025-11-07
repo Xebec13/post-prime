@@ -18,7 +18,7 @@ export default function About() {
         </div>
 
         {/* === Background Image === */}
-        <div className="h-full min-w-full lg:min-w-4xl">
+        <div className="h-full w-3/4 min-w-full lg:min-w-4xl border-2 border-pink-500">
           <Image
             src="/pp-about.png"
             alt="Post Prime About"
