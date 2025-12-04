@@ -1,4 +1,4 @@
-import Light from "../../styles/Light";
+import Light from "../styles/Light";
 import Image from "next/image";
 
 export default function About() {

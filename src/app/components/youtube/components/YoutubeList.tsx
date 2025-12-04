@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import { getYoutubeVideos, YoutubeVideo } from "../../../lib/youtubeApi";
+import { getYoutubeVideos, YoutubeVideo } from "../../lib/youtubeApi";
 
 interface YoutubeListProps {
   playlistId: string;
@@ -34,9 +34,10 @@ export default function YoutubeList({
     }
 
     fetchVideos();
-  }, [playlistId, onSelect]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [playlistId]); // Usunięto onSelect z zależności, aby uniknąć pętli i zbędnych zapytań
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <p className="text-gray-200 p-2">Loading...</p>; // Dodałem proste stylowanie dla loading
 
   return (
     <div className="flex flex-col gap-1 h-full w-full max-h-125">
@@ -44,7 +45,7 @@ export default function YoutubeList({
         <div
           key={video.videoId}
           onClick={() => onSelect(video.videoId)}
-          className=" grid grid-cols-2 lg:place-items-stretch gap-0.5 rounded-md cursor-pointer transition-all duration-300 hover:scale-101 hover:bg-orange-500/40"
+          className="grid grid-cols-2 lg:place-items-stretch gap-0.5 rounded-md cursor-pointer transition-all duration-300 hover:scale-101 hover:bg-orange-500/40"
         >
           <div className="aspect-[2/1] sm:shrink-0 rounded-lg p-2 flex items-center">
             <Image
@@ -63,6 +64,5 @@ export default function YoutubeList({
         </div>
       ))}
     </div>
-
   );
 }

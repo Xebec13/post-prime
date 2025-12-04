@@ -1,19 +1,19 @@
 import { Navbar, Hero, About, Youtube,Social, Footer } from "./components";
-import Divider from "./styles/Divider"
+import Divider from "../app/components/styles/Divider"
 export default function Home() {
   return (
     <>
       <Navbar />
       <main>
-        <Hero />
-        <About />
-        <Divider/>
+        {/* <Hero /> */}
+        {/* <About /> */}
+        {/* <Divider/> */}
         <Youtube />
-        <Social/>
+        {/* <Social/> */}
       </main>
-      <footer>
+      
         <Footer />
-      </footer>
+      
       {/* <PlatformSection/>
       <FbSection/> */}
     </>

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Light from "../../styles/Light"
+import Light from "../styles/Light"
 import { YoutubePlayer, YoutubeList, } from "./components";
 
 const PLAYLIST_ID = "UUJz63WADBQBcPJ4A6N5BzfQ";
@@ -17,7 +17,7 @@ export default function Youtube() {
       </h2> */}
 
       <div className="relative bg-neutral-900/20 flex flex-col place-items-stretch lg:grid lg:grid-cols-3 p-3 gap-3 rounded-md overflow-hidden">
-        <div className="lg:col-span-2">
+        <div className="lg:col-span-2 aspect-video">
           <YoutubePlayer videoId={currentVideo} />
         </div>
         <div className="overflow-y-scroll p-2">
@@ -31,7 +31,9 @@ export default function Youtube() {
       </div>
       <a
         href="https://www.youtube.com/@PostPrimePL/featured"
-        className="text-sm sm:text-md text-right text-orange-200 mt-2 uppercase font-bold cursor-pointer hover:text-orange-400 transition-colors"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="block text-sm sm:text-md text-right text-orange-200 mt-2 uppercase font-bold cursor-pointer hover:text-orange-400 transition-colors"
       >
         Więcej...
       </a>

@@ -1,45 +1,39 @@
-"use client";
-import { HeroTitle, HeroContent, HeroLogo} from "./components";
-import Light from "../../styles/Light"
+'use client';
+import { HeroTitle, HeroContent } from "./components";
+import Spline from '@splinetool/react-spline';
 
 const heroContent = {
   title: ["Post", "Prime"],
   subtitle: "Podcast",
-  description: [
-    "Rozmowy tworzone", "z serca do koszykówki",
-  ],
+  description: ["Rozmowy tworzone", "z serca do koszykówki"],
   year: "2020",
 };
 
 export default function Hero() {
-
   return (
-    <>
-      <section
-        id="home"
-        className={`border-2 border-pink-500 relative min-h-screen sm:h-[175vh] overflow-hidden flex flex-col gap-6 bg-neutral-900}`}
-      >
-        <Light variant="top" />
-        <div className="min-h-screen w-full translate-y-1/8 sm:translate-y-1/7 relative p-3 sm:p-6">
-          <div className="hero-shadow-title grid grid-cols-2 gap-2 text-[clamp(1.3rem,13vw,25rem)] font-black uppercase">
-            {/* === TITLE === */}
-            <HeroTitle title={heroContent.title} />
+    <section
+      id="home"
+      className="relative min-h-screen bg-neutral-900 border-2 border-pink-500"
+    >
 
-            {/* === LOGO === */}
-            <HeroLogo />
-          </div>
+      <div className="absolute inset-0  w-full h-full">
+        <Spline scene="https://prod.spline.design/8hkallnKzmQnwjQP/scene.splinecode" />
+      </div>
+      {/* === Text overlay === */}
+      <div className="relative inset-0 z-10 text-[clamp(5rem,15vw,30rem)] scale-y-200 grid grid-cols-2 gap-2 ">
+        <HeroTitle title={heroContent.title} />
+      </div>
 
-          {/* === DESCRIPTION & YEAR === */}
-          <div className="grid grid-cols-2 gap-1 uppercase mt-10 sm:mt-20">
-            <HeroContent
-              subtitle={heroContent.subtitle}
-              description={heroContent.description}
-              year={heroContent.year}
-            />
-          </div>
+      {/* Hero Content */}
+      <div className="relative z-10 text-center px-4 sm:px-8">
+        <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-2 uppercase text-white">
+          <HeroContent
+            subtitle={heroContent.subtitle}
+            description={heroContent.description}
+            year={heroContent.year}
+          />
         </div>
-      </section>
-      
-    </>
+      </div>
+    </section>
   );
 }
