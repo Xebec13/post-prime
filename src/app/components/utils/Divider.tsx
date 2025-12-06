@@ -1,4 +1,4 @@
-import Light from "../styles/Light"
+import Light from "../utils/Light"
 export default function Divider() {
     return (
         <div className="h-[15vh] relative">

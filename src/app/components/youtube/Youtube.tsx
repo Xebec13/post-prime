@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Light from "../styles/Light"
+import Light from "../utils/Light"
 import { YoutubePlayer, YoutubeList, } from "./components";
 
 const PLAYLIST_ID = "UUJz63WADBQBcPJ4A6N5BzfQ";
@@ -16,12 +16,17 @@ export default function Youtube() {
         Nie przegap!
       </h2> */}
 
-      <div className="relative bg-neutral-900/20 flex flex-col place-items-stretch lg:grid lg:grid-cols-3 p-3 gap-3 rounded-md overflow-hidden">
-        <div className="lg:col-span-2 aspect-video">
+      <div 
+      
+      className="relative bg-neutral-900/20 flex flex-col place-items-stretch lg:grid lg:grid-cols-3 p-3 gap-3 rounded-md overflow-hidden">
+        <div  className="lg:col-span-2 aspect-video">
           <YoutubePlayer videoId={currentVideo} />
         </div>
-        <div className="overflow-y-scroll p-2">
+        <div 
+        data-lenis-prevent
+        className="overflow-y-scroll p-2">
           <YoutubeList
+          
             playlistId={PLAYLIST_ID}
             visibleCount={9}
             onSelect={setCurrentVideo}

@@ -1,7 +1,5 @@
-import { Providers } from './providers';
-
 import type { Metadata } from "next";
-import { Inter, Montserrat,Roboto } from "next/font/google";
+import { Inter, Montserrat, Roboto } from "next/font/google";
 import "./globals.css";
 
 
@@ -23,7 +21,7 @@ export const metadata: Metadata = {
   title: "Post Prime",
   description: "Basketball Podcast",
   icons: {
-    icon: "/pp-logo.png",  
+    icon: "/pp-logo.png",
   },
 };
 
@@ -37,7 +35,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${montserrat.variable} ${roboto.variable} antialiased`}
       >
-        <Providers>{children}</Providers>
+          {children} 
       </body>
     </html>
   );
