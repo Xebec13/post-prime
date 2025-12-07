@@ -21,10 +21,10 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 py-5 px-10 z-50 w-full flex items-center justify-between bg-neutral-900">
+    <nav className="fixed top-0 left-0 py-2 px-10 z-50 w-full flex items-center justify-between bg-neutral-900">
 
       {/* === LEFT SIDE – LOGO === */}
-      <div className="bg-orange-100/90 rounded-full">
+      <div className="bg-orange-50 rounded-full">
         <Link href={navItems[0].href} aria-label={navItems[0].alt}>
           <Image
             src="/postprime-logo-2.png"
