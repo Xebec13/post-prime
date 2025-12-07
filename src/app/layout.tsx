@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Montserrat, Roboto } from "next/font/google";
+import { Inter,Pirata_One  } from "next/font/google";
 import "./globals.css";
 
 
@@ -8,14 +8,11 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
-const montserrat = Montserrat({
+const pirata_one = Pirata_One({
   subsets: ["latin"],
-  variable: "--font-montserrat",
-});
-const roboto = Roboto({
-  subsets: ["latin"],
-  variable: "--font-roboto",
-});
+  variable: "--font-pirata",
+  weight: "400"
+})
 
 export const metadata: Metadata = {
   title: "Post Prime",
@@ -33,7 +30,7 @@ export default function RootLayout({
   return (
     <html lang="pl">
       <body
-        className={`${inter.variable} ${montserrat.variable} ${roboto.variable} antialiased`}
+        className={`${inter.variable} ${pirata_one.variable} antialiased`}
       >
           {children} 
       </body>

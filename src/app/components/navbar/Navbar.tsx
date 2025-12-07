@@ -16,14 +16,15 @@ const socialLinks = [
   { label: "Facebook", href: "https://facebook.com" },
   { label: "Instagram", href: "https://instagram.com" },
 ];
+
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 py-3 px-3 sm:px-9 z-50 w-full flex items-center justify-between">
+    <nav className="fixed top-0 left-0 py-5 px-10 z-50 w-full flex items-center justify-between bg-neutral-900">
 
       {/* === LEFT SIDE – LOGO === */}
-      <div className="backdrop-invert rounded-full">
+      <div className="bg-orange-100/90 rounded-full">
         <Link href={navItems[0].href} aria-label={navItems[0].alt}>
           <Image
             src="/postprime-logo-2.png"
@@ -37,36 +38,38 @@ export default function Navbar() {
       </div>
 
       {/* === RIGHT SIDE – TOGGLE BUTTON === */}
-      <div className="relative z-50 flex items-center rounded-md backdrop-invert">
+      <div className="relative z-50 flex items-center">
         <button
           onClick={() => setIsOpen((prev) => !prev)}
           aria-label="Toggle menu"
-          className="text-2xl text-orange-500 p-2 rounded-md cursor-pointer"
+          className={`text-3xl text-orange-400 p-2 rounded-md cursor-pointer`}
         >
           {isOpen ? <FaTimes /> : <FaBars />}
         </button>
       </div>
+
       {/* === FULLSCREEN OVERLAY MENU === */}
-      <ul
-        className={`fixed top-0 right-0 pt-20 px-6 h-screen w-2/3 sm:w-1/3 flex flex-col justify-between bg-orange-100 transition-all duration-500 ease-in-out
+      <div
+        className={`fixed top-0 right-0 pt-20 px-6 h-screen w-2/3 sm:w-1/3 flex flex-col justify-between bg-orange-200 transition-all duration-500 ease-in-out
           ${isOpen ? "translate-x-0 opacity-100 visible" : "translate-x-full opacity-0 invisible"}`}
       >
-        <div className="text-neutral-800 text-4xl font-semibold uppercase space-y-5">
-          {navItems.map((item, i) =>
-          (
-            <li key={i}>
-              <Link
-                href={item.href}
-                aria-label={item.alt}
-                onClick={() => setIsOpen(false)}
-                className="transition-colors duration-300 hover:text-orange-500"
-              >
-                {item.label}
-              </Link>
-            </li>
-          )
-          )}
-        </div>
+        <ul className="text-neutral-800 text-4xl font-semibold uppercase space-y-5">
+          {/* POPRAWKA: Filtrowanie, aby pominąć logo w liście tekstowej */}
+          {navItems
+            .filter((item) => item.type === "link")
+            .map((item, i) => (
+              <li key={i}>
+                <Link
+                  href={item.href}
+                  aria-label={item.alt}
+                  onClick={() => setIsOpen(false)}
+                  className="transition-colors duration-300 hover:text-orange-500"
+                >
+                  {item.label}
+                </Link>
+              </li>
+            ))}
+        </ul>
         {/* --- Social Links --- */}
         <div className="flex gap-2 pb-10 text-xs font-medium text-neutral-800 uppercase">
           {socialLinks.map((social, i) => (
@@ -80,10 +83,7 @@ export default function Navbar() {
             </p>
           ))}
         </div>
-      </ul>
-
-
-
+      </div>
     </nav>
   );
 }
